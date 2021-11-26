@@ -18,4 +18,7 @@ public class DonHangbo {
 	public int XacNhanDonHang(long mahoadon) {
 		return dhdao.XacNhanDonHang(mahoadon);
 	}
+	public int deleteDonHang(long mahoadon) {
+		return dhdao.deleteDonHang(mahoadon);
+	}
 }

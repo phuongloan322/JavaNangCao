@@ -1,3 +1,5 @@
+<%@page import="beanAdmin.ChiTietDonHangbean"%>
+<%@page import="bean.ChiTietHoaDon"%>
 <%@page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> 
@@ -30,8 +32,15 @@
     <!-- /.content-header -->
 	<h5 style="padding-left:25px"><b>Mã hóa đơn</b> : ${ChiTietDonHang[0].mahoadon }</h5>
 	<h5 style="padding-left:25px"><b>Họ tên</b> : ${ChiTietDonHang[0].hoten }</h5>
-	
-	<h5 style="padding-left:25px"><b>Tổng số lượng mua</b> : ${ChiTietDonHang[0].soluongmua }</h5>
+	<%-- <%long Tong = 0, soluong = 0; 
+	List<ChiTietDonHangbean> ds = (List<ChiTietDonHangbean>)request.getAttribute("ChiTietDonHang");
+	 for(ChiTietDonHangbean chitiet : ds){
+		 Tong += chitiet.getTongtien();
+		 soluong += chitiet.getSoluongmua();
+	 }
+	 %>
+	<h5 style="padding-left:25px"><b>Tổng số lượng mua</b> : <%=soluong %></h5> 
+	<h5 style="padding-left:25px"><b>Tổng hóa đơn</b> : <fmt:formatNumber type="number" groupingUsed="true" value="<%=Tong %>" />đ</h5>  --%>
     <!-- Main content -->
     <section class="content">
     <div class="container-fluid">
@@ -95,8 +104,9 @@
 			     	 <a href="<%=request.getContextPath()%>/FindById?itemchitiet=${chitiet.machitiet}" type="button" class="btn btn-warning suaMenu" id="editButton">
 						Sửa
 					 </a>
+					 <c:if test="${chitiet.damua == 'false' }">
 			     	 <a href="<%=request.getContextPath()%>/ChiTietHoaDon?kt=Delete&itemDeleteCTHD=${chitiet.machitiet}" type="button" class="btn btn-danger"id="deleteButton">Hủy</a> 
-			  		
+			  		 </c:if>
 			  	</td>
 		    </tr>
 		    

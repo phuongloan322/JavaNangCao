@@ -25,9 +25,9 @@
 						
 						<form action="<%=request.getContextPath()%>/checkout" method="post" class="has-error">
 							
-							<input type="text" required id="hoten" placeholder="Họ tên" value="<%=acc.getHoten() %>" name="hoten"/>
-							<input type="text" required id="phone" placeholder="Số điện thoại" value="<%=acc.getSodt() %>" name="sdt"/>
-							<input type="text" required placeholder="Địa chỉ" value="<%=acc.getDiachi() %>" name="diachi"/>
+							<input type="text" required id="hoten" placeholder="Họ tên" value="<%=acc.getHoten() %>" name="hoten" readonly>
+							<input type="text" required id="phone" placeholder="Số điện thoại" value="<%=acc.getSodt() %>" name="sdt" readonly>
+							<input type="text" required placeholder="Địa chỉ" value="<%=acc.getDiachi() %>" name="diachi" readonly>
 							<label>Hình thức thanh toán:</label>
 							<div class="radiothanhtoan">
 								&nbsp;<input type="radio" id="" name="thanhtoan" value="true">

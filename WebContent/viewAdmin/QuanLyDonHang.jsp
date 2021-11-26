@@ -67,7 +67,7 @@
 			    	 <a href="<%=request.getContextPath()%>/ChiTietHoaDon?mahoadon=${donhang.mahoadon}" type="button" class="btn btn-warning suaMenu" id="editButton">
 						Xem
 					 </a>
-			     	 <a href="<%=request.getContextPath()%>/QuanLyLoaiSach?kt=Delete&itemDeleteLoai=${loai.maloai}" type="button" class="btn btn-danger"id="deleteButton">Hủy</a> 
+			     	 <a href="<%=request.getContextPath()%>/QuanLyDonHang?delete=${donhang.mahoadon}" type="button" class="btn btn-danger"id="deleteButton">Hủy</a> 
 			  		
 			  	</td>
 		    </tr>
@@ -91,8 +91,7 @@
 			    	 <a href="<%=request.getContextPath()%>/ChiTietHoaDon?mahoadon=${donhang.mahoadon}" type="button" class="btn btn-warning suaMenu" id="editButton">
 						Xem
 					 </a>
-			     	 <a href="<%=request.getContextPath()%>/QuanLyLoaiSach?kt=Delete&itemDeleteLoai=${loai.maloai}" type="button" class="btn btn-danger"id="deleteButton">Hủy</a> 
-			  		
+			     	 
 			  	</td>
 		    </tr>
 		    

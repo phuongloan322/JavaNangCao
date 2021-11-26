@@ -71,8 +71,8 @@ public class QuanLySachController extends HttpServlet {
 				String gia = "";
 				String ngaynhap = "";
 				
-				if(!ServletFileUpload.isMultipartContent(request)) {
-					request.setAttribute("resultadd", (long)0);
+				if(!ServletFileUpload.isMultipartContent(request)) {	//
+					request.setAttribute("resultadd", (long)0);			
 					RequestDispatcher rd = request.getRequestDispatcher("/viewAdmin/QuanLySach.jsp");
 					rd.forward(request, response);
 				}
@@ -82,8 +82,8 @@ public class QuanLySachController extends HttpServlet {
 				String uploadPath = getServletContext().getRealPath("")
 						+ File.separator + UPLOAD_DIRECTORY;		//đường dẫn đến thư mục asset/image_sach
 				File uploadDir = new File(uploadPath);
-				
-				if(!uploadDir.exists()) {
+				//System.out.println(uploadDir);
+				if(!uploadDir.exists()) {	//kiểm tra tồn tại
 					uploadDir.mkdir();
 				}
 				

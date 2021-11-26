@@ -74,4 +74,20 @@ public class DonHangdao {
 		}
 		return rs;
 	}
+	public int deleteDonHang(long mahoadon) {
+		int rs = 0;
+		String sql = "delete from hoadon where MaHoaDon = ?\r\n" + 
+					"delete from ChiTietHoaDon where MaHoaDon = ?";
+		try {
+			dc.KetNoi();
+			Connection cnn = dc.cnn;
+			 pst = cnn.prepareStatement(sql);
+			 pst.setLong(1, mahoadon);
+			 pst.setLong(2, mahoadon);
+			 rs = pst.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rs;
+	}
 }

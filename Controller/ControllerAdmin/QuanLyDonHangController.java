@@ -44,7 +44,11 @@ public class QuanLyDonHangController extends HttpServlet {
 		request.setAttribute("DonHanglist", dhbo.getDonHang());
 		request.setAttribute("DonHangXacNhanlist", dhbo.getDonHangDaXacNhan());
 		
+		//Xác nhận đơn hàng
+		
 		String mahoadon = request.getParameter("xacnhan");
+		String deleteHD = request.getParameter("delete");
+		
 		if(mahoadon != null) {
 			
 			int rs = dhbo.XacNhanDonHang(Long.parseLong(mahoadon));
@@ -58,6 +62,26 @@ public class QuanLyDonHangController extends HttpServlet {
 			}
 			
 		}
+		
+		//Xóa đơn hàng
+		
+		
+		else if(deleteHD != null) {
+			
+			int rs1 = dhbo.deleteDonHang(Long.parseLong(deleteHD));
+			
+			if(rs1 > 0) {
+				response.sendRedirect(request.getContextPath()+"/QuanLyDonHang?msg=OK");
+			}
+			
+			else {
+				response.sendRedirect(request.getContextPath()+"/QuanLyDonHang?msg=OK");		//xem lại
+			}
+			
+		}
+		
+		//Hiển thị đơn hàng
+		
 		else {
 			RequestDispatcher rd = request.getRequestDispatcher("/viewAdmin/QuanLyDonHang.jsp");
 			rd.forward(request, response);
